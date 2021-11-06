@@ -13,8 +13,9 @@ class NewTb(object):
         length:表格的长
         width:表格的宽
         """
-        with open(name,'w') as f:
+        with open(name,'w',encoding='utf-8') as f:
             self.Data = {"Data":{'name':name,'V':'0.1','length':length,'width':width},'From':[]}
+            #遍历并添加空字符串项
             for i in range(1,width+1):
                 self.Data['From'].append([])
                 for i2 in range(1,length+1):
