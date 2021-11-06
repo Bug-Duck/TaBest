@@ -13,7 +13,7 @@ class NewTb(object):
         length:表格的长
         width:表格的宽
         """
-        with open(name,'w',encoding='utf-8') as f:
+        with open(name,'w',encoding='utf-8-sig') as f:
             self.Data = {"Data":{'name':name,'V':'0.1','length':length,'width':width},'From':[]}
             #遍历并添加空字符串项
             for i in range(1,width+1):
@@ -27,7 +27,7 @@ class OpenTb(object):
     def __init__(self,name):
         # with open(self.ex[0],'r') as f:
         #     print(f.read())
-        with open(name,'r',encoding='utf-8') as f:
+        with open(name,'r',encoding='utf-8-sig') as f:
             self.Data = json.loads(f.read())
             # print(self.Data)
             self.FromData = self.Data['From']

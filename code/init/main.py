@@ -50,7 +50,7 @@ class MainWindow(QMainWindow, UI.Ui_MainWindow):
         self.Tb.Data["From"] = NowData.Data                         #与上一行(忽略注释)同理
         # print(self.Tb.Data)
         self.NowjsonData = json.dumps(self.Tb.Data)                 #将暂存区数据转化为json文本
-        with open(self.NowOpen,'w',encoding='utf-8-sig') as f:      #写入
+        with open(self.NowOpen,'w') as f:                           #写入
                 NowJsonData = json.dumps(self.Tb.Data)
                 f.write(NowJsonData)
         # Data = []
