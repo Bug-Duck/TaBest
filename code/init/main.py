@@ -59,9 +59,9 @@ class MainWindow(QMainWindow, UI.Ui_MainWindow):
             Data.append([])
             for hor in range(0,self.hor_num):
                 AData = self.tableWidget.itemAt(row,hor).text()
-                print(AData)
-                # Data[row].append(AData)
-        # self.Data = Data
+                # print(AData)
+                Data[row].append(AData)
+        self.Data = Data
         # print(self.Data)
 
 

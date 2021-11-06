@@ -7,6 +7,8 @@ import json
 """
 class QReadOenpTbFile(object):
     def __init__(self,TbData,QtableWidgetObject):
+        QtableWidgetObject.setRowCount(TbData.DataData['width'])
+        QtableWidgetObject.setColumnCount(TbData.DataData['length'])
         for row in range(0,TbData.DataData["width"]):
             for hor in range(0,TbData.DataData["length"]):
                 NewItem = QTableWidgetItem(TbData.FromData[row][hor])
