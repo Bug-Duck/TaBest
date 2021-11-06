@@ -26,6 +26,6 @@ class QGetTableWidgetList(object):
         for row in range(0,self.row_num):
             Data.append([])
             for hor in range(0,self.hor_num):
-                AData = TableObject.itemAt(row,hor).text()
+                AData = TableObject.item(row,hor).text()
                 Data[row].append(AData)
         self.Data = Data

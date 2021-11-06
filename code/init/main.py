@@ -26,9 +26,10 @@ class MainWindow(QMainWindow, UI.Ui_MainWindow):
             self.tableWidget.setRowCount(self.Tb.DataData['width'])
             self.tableWidget.setColumnCount(self.Tb.DataData['length'])
             UI_kernel.QReadOenpTbFile(self.Tb,self.tableWidget)                                    #将数据显示到前端qt界面上
+            self.NowOpen = self.FileOpenNow
         except:
             pass
-        self.NowOpen = self.FileOpenNow
+        
 
     def CallNewFileWindow(self):
         self.NewFileWin = NewFileWindow()                       #初始化新建文件窗口
