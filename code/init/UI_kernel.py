@@ -29,3 +29,8 @@ class QGetTableWidgetList(object):
                 AData = TableObject.item(row,hor).text()
                 Data[row].append(AData)
         self.Data = Data
+
+class QCloseTable(object):
+    def __init__(self,TableObject):
+        TableObject.setRowCount(0)
+        TableObject.setColumnCount(0)

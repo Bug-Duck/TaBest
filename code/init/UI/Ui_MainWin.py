@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\TaBest\Main\UI\MainWin.ui'
+# Form implementation generated from reading ui file 'c:\Users\Administrator\Desktop\git-of-gitee\TaBest\code\init\UI\MainWin.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -53,8 +53,8 @@ class Ui_MainWindow(object):
         self.save.setObjectName("save")
         self.other_save = QtWidgets.QAction(MainWindow)
         self.other_save.setObjectName("other_save")
-        self.closee = QtWidgets.QAction(MainWindow)
-        self.closee.setObjectName("closee")
+        self.Close = QtWidgets.QAction(MainWindow)
+        self.Close.setObjectName("Close")
         self.exite = QtWidgets.QAction(MainWindow)
         self.exite.setObjectName("exite")
         self.NewFile = QtWidgets.QAction(MainWindow)
@@ -64,7 +64,7 @@ class Ui_MainWindow(object):
         self.menu.addAction(self.save)
         self.menu.addAction(self.other_save)
         self.menu.addSeparator()
-        self.menu.addAction(self.closee)
+        self.menu.addAction(self.Close)
         self.menu.addSeparator()
         self.menu.addAction(self.exite)
         self.menubar.addAction(self.menu.menuAction())
@@ -74,7 +74,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "BugDuck-TaBest 0.1"))
         self.treeWidget.headerItem().setText(0, _translate("MainWindow", "操作"))
         __sortingEnabled = self.treeWidget.isSortingEnabled()
         self.treeWidget.setSortingEnabled(False)
@@ -87,7 +87,7 @@ class Ui_MainWindow(object):
         self.open.setText(_translate("MainWindow", "打开"))
         self.save.setText(_translate("MainWindow", "保存"))
         self.other_save.setText(_translate("MainWindow", "另存为"))
-        self.closee.setText(_translate("MainWindow", "关闭文件"))
+        self.Close.setText(_translate("MainWindow", "关闭文件"))
         self.exite.setText(_translate("MainWindow", "退出\n"
 ""))
         self.NewFile.setText(_translate("MainWindow", "新建"))

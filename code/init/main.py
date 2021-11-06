@@ -16,6 +16,8 @@ class MainWindow(QMainWindow, UI.Ui_MainWindow):
         self.open.triggered.connect(self.read_ex)
         self.NewFile.triggered.connect(self.CallNewFileWindow)
         self.save.triggered.connect(self.Save)
+        self.Close.triggered.connect(self.CloseFile)
+        self.exite.triggered.connect(sys.exit)
         
         
     def read_ex(self):
@@ -65,6 +67,13 @@ class MainWindow(QMainWindow, UI.Ui_MainWindow):
         #         Data[row].append(AData)
         # self.Data = Data
         # # print(self.Data)
+
+    def CloseFile(self):
+        chooes = QMessageBox.warning(self,"文件未保存","是否保存你所做的修改?",QMessageBox.Yes | QMessageBox.No ,QMessageBox.Yes)
+        if chooes == QMessageBox.Yes:
+            UI_kernel.QCloseTable(self.tableWidget)
+            del self.Tb                             #关闭后删除暂存区
+        else:pass
 
 
 class NewFileWindow(QWidget, UI.Ui_NewFile):

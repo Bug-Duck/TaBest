@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>BugDuck-TaBest 0.1</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -74,7 +74,7 @@
     <addaction name="save"/>
     <addaction name="other_save"/>
     <addaction name="separator"/>
-    <addaction name="closee"/>
+    <addaction name="Close"/>
     <addaction name="separator"/>
     <addaction name="exite"/>
    </widget>
@@ -96,7 +96,7 @@
     <string>另存为</string>
    </property>
   </action>
-  <action name="closee">
+  <action name="Close">
    <property name="text">
     <string>关闭文件</string>
    </property>
