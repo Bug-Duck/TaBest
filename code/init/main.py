@@ -4,7 +4,7 @@ import json
 from PyQt5.QtWidgets import (QAction, QApplication,QFileDialog, QMainWindow, QMessageBox, QTableWidgetItem, QWidget)  # pip install PyQt5
 sys.path.append("~\\UI")
 sys.path.append('~\\operate')
-import UI,kernel,UI_kernel
+import UI,TBDD,UI_kernel
 from operate import *
 
 class MainWindow(QMainWindow, UI.Ui_MainWindow):
@@ -21,7 +21,7 @@ class MainWindow(QMainWindow, UI.Ui_MainWindow):
     def read_ex(self):
         try:
             self.ex = QFileDialog.getOpenFileName(self,'选择表格文件','c://','TaBest files(*.tb)')
-            self.Tb = kernel.OpenTb(self.ex[0])
+            self.Tb = TBDD.OpenTb(self.ex[0])
             self.FileOpenNow = self.ex[0]
             self.tableWidget.setRowCount(self.Tb.DataData['width'])
             self.tableWidget.setColumnCount(self.Tb.DataData['length'])
@@ -39,8 +39,8 @@ class MainWindow(QMainWindow, UI.Ui_MainWindow):
     def NewTableShow(self):
         self.NewFileWin.close()
         self.NewFileName = QFileDialog.getSaveFileName(self,'保存','C:\\TaBestFile.tb','tb(*.tb)')
-        kernel.NewTb(self.NewFileName[0],self.NewFileWin.hor.value(),self.NewFileWin.row.value())
-        self.Tb = kernel.OpenTb(self.NewFileName[0])
+        TBDD.NewTb(self.NewFileName[0],self.NewFileWin.hor.value(),self.NewFileWin.row.value())
+        self.Tb = TBDD.OpenTb(self.NewFileName[0])
         self.NowOpen = self.NewFileName[0]
         UI_kernel.QReadOenpTbFile(self.Tb,self.tableWidget)
     def Save(self):
