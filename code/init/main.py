@@ -81,6 +81,7 @@ class NewFileWindow(QWidget, UI.Ui_NewFile):
     def __init__(self, parent=None):
         super(NewFileWindow, self).__init__(parent)
         self.setupUi(self)
+        pass
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)  
