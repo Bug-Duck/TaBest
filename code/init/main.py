@@ -40,12 +40,15 @@ class MainWindow(QMainWindow, UI.Ui_MainWindow):
         # print(self.NewFileName)
         
     def NewTableShow(self):
-        self.NewFileWin.close()                                                                     #关闭窗口
-        self.NewFileName = QFileDialog.getSaveFileName(self,'保存','C:\\TaBestFile.tb','tb(*.tb)')  #让用户选择存储路径
-        TBDD.NewTb(self.NewFileName[0],self.NewFileWin.hor.value(),self.NewFileWin.row.value())     #新建TB文件
-        self.Tb = TBDD.OpenTb(self.NewFileName[0])                                                  #打开tb文件至暂存区(暂存区指self.Tb)
-        self.NowOpen = self.NewFileName[0]                                                          #读取现在正在打开的文件路径
-        UI_kernel.QReadOenpTbFile(self.Tb,self.tableWidget)                                         #将数据显示到前端qt界面上
+        try:
+            self.NewFileWin.close()                                                                     #关闭窗口
+            self.NewFileName = QFileDialog.getSaveFileName(self,'保存','C:\\TaBestFile.tb','tb(*.tb)')  #让用户选择存储路径
+            TBDD.NewTb(self.NewFileName[0],self.NewFileWin.hor.value(),self.NewFileWin.row.value())     #新建TB文件
+            self.Tb = TBDD.OpenTb(self.NewFileName[0])                                                  #打开tb文件至暂存区(暂存区指self.Tb)
+            self.NowOpen = self.NewFileName[0]                                                          #读取现在正在打开的文件路径
+            UI_kernel.QReadOenpTbFile(self.Tb,self.tableWidget)                                         #将数据显示到前端qt界面上
+        except:                                                                                         
+            pass                                     
 
     def Save(self):
         NowData = UI_kernel.QGetTableWidgetList(self.tableWidget)   #将前端表格上的数据同步到暂存区
