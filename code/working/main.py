@@ -72,6 +72,7 @@ class MainWindow(QMainWindow, UI.Ui_MainWindow):
         chooes = QMessageBox.warning(self,"文件未保存","是否保存你所做的修改?",QMessageBox.Yes | QMessageBox.No ,QMessageBox.Yes)
         if chooes == QMessageBox.Yes:
             UI_kernel.QCloseTable(self.tableWidget)
+            self.Tb.F
             del self.Tb                             #关闭后删除暂存区
         else:pass
 

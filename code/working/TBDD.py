@@ -27,18 +27,23 @@ class OpenTb(object):
     def __init__(self,name):
         # with open(self.ex[0],'r') as f:
         #     print(f.read())
-        with open(name,'r',encoding='utf-8-sig') as f:
-            self.Data = json.loads(f.read())
-            # print(self.Data)
-            self.FromData = self.Data['From']
-            self.DataData = self.Data['Data']
-            # print(self.FromData, self.DataData)
-class getFrom(object):   
-    def __init__(self):
-        self.FromData = json.loads(self)
-        return self.FromData['From']
+        self = open(name,'r',encoding='utf-8-sig')
+        self.Data = json.loads(self.read())
+        # print(self.Data)
+        self.FromData = self.Data['From']
+        self.FileData = self.Data['Data']
+        # print(self.FromData, self.DataData)
 
-class getData(object):
-    def __init__(self):
-        self.DataData = json.loads(self)
-        return self.DataData['Data']
+    def getFrom(self):
+        return self.FromData
+
+    def getFileData(self):
+        return self.FileData
+
+    def writeCell(self,row,hor,text):
+        self.FromData[row-1][hor-1] = text
+
+    def FileClose(self):
+        self.Data['From'] = self.FromData
+        self.Data['Data'] = self.FileData
+        self.close()
